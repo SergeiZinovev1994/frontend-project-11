@@ -1,24 +1,58 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>RSS agregator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSS agregator</title>
 </head>
 <body>
-    <div class="container">
-        <form class="row g-3 needs-validation" novalidate>
-            <div class="col-md-4">
-                <label for="linkAria" class="form-label">Ссылка RSS</label>
-                <input type="text" class="form-control" id="linkAria" placeholder="Ссылка RSS" required>
+  <main class="flex-grow-1">
+    <section class="container-fluid text-bg-dark p-5">
+      <div class="row ">
+        <div class="col-md-10 col-lg-8 mx-auto">
+          <h1 class="display-3">RSS агрегатор</h1>
+          <p class="lead">Начните читать RSS сегодня! Это легко, это красиво.</p>
+          <form class="rss-form text-body">
+            <div class="row">
+              <div class="col">
+                <div class="form-floating">
+                  <input type="text" id="url-input" name="url" aria-label="url" class="form-control w-100 text-dark" placeholder="Ссылка RSS" autofocus required>
+                  <label for="url-input">Ссылка RSS</label>
+                </div>
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="h-100 btn btn-primary btn-lg px-sm-5">Добавить</button>
+              </div>
             </div>
-            <div class="col-12">
-                <button class="btn btn-primary" type="submit">Submit form</button>
-            </div>
-        </form>
+          </form>
+          <p class="mt-2 mb-0 text-secondary">Пример: https://lorem-rss.hexlet.app/feed</p>
+          <p class="feedback m-0 position-absolute small text-danger"></p> 
+        </div>
+      </div>
+    </section>
+    <section class="container-fluid">
+      <div class="row">
+        <div class="col-md-10 col-lg-8 order-1 mx-auto posts"></div>
+        <div class="col-md-10 col-lg-8 mx-auto order-0 order-lg-1 feeds"></div>
+      </div>
+    </section>
+  </main>
+  <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="title"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-primary">Читать полностью</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+      </div>
     </div>
-
-
+  </div>
+</div>
 </body>
 </html>

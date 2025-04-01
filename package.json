@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "i18next": "^24.2.3",
     "on-change": "^5.0.1",
     "sass": "^1.86.0",
     "sass-loader": "^16.0.5",
